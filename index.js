@@ -13,10 +13,15 @@ bot.on('ready', () => {
 bot.on('message', (msg) => {
     let args = msg.content.split(' ');
     if (args[0]!= prefix) return; 
-    let reply = '';
-    for(let i=1; i<args.length;i++)
-        reply+=" " + args[i];
-    msg.channel.send(reply);
+
+    switch(args[1]){
+        case 'reply' : msg.reply('Kyahi chutiya ho be');break;
+        default : let reply = '';
+        for(let i=1; i<args.length;i++)
+            reply+=" " + args[i];
+        msg.channel.send(reply);
+    
+    }
 });
 
 bot.login(token);
